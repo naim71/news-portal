@@ -28,12 +28,14 @@ const loadCategoryId = (categoryId) =>{
 
 const displayCategoryId = categoryCards =>{
     // console.log(categoryCards);
+    const categoryContainer = document.getElementById('category-card');
+    categoryContainer.textContent = ``;
     categoryCards.forEach(card =>{
-        const categoryContainer = document.getElementById('category-card');
+        // const categoryContainer = document.getElementById('category-card');
         const categoryCardDiv = document.createElement('div');
         categoryCardDiv.classList.add('card');
         categoryCardDiv.innerHTML= `
-    <div class="d-flex justify-content-evenly mb-2">
+    <div class="d-flex justify-content-evenly">
     <div>
     <img src="${card.image_url}" class="img-fluid p-4 rounded-5" style="height: 300px; width: 245px;">
     </div>
