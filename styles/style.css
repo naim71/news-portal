@@ -5,4 +5,6 @@
 .logo{
     font-family: 'Raleway', sans-serif;
 }
-
+.list{
+    list-style: none;
+}
