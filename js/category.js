@@ -67,38 +67,5 @@ const displayCategoryId = categoryCards =>{
     </div>`;
     categoryContainer.appendChild(categoryCardDiv);
     });
-    // const categoryContainer = document.getElementById('category-card');
-    // const categoryCardDiv = document.createElement('div');
-    // categoryCardDiv.classList.add('card')
-    // categoryCardDiv.innerHTML= `
-    // <div class="d-flex justify-content-evenly mb-2">
-    // <div>
-    // <img src="${categoryCards.data[1].image_url}" class="img-fluid p-4 rounded-5" style="height: 300px; width: 245px;">
-    // </div>
-    // <div class="p-4 w-75">
-    // <div class="card-body">
-    // <h5 class="card-title fw-bold">${categoryCards.data[0].title}</h5>
-    // <p class="card-text">${categoryCards.data[0].details}</p>
-    // <div class="d-flex justify-content-between">
-    // <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    //  <p><i class="bi bi-eye"></i> ${categoryCards.data[0].total_view}</p>
-    //  <div>
-    //      <i class="bi bi-star-half"></i>
-    //      <i class="bi bi-star"></i>
-    //      <i class="bi bi-star"></i>
-    //      <i class="bi bi-star"></i>
-    //      <i class="bi bi-star"></i>
-    //  </div>
-    //  <i class="bi bi-arrow-right-square-fill"></i>
-
-    //                  </div>
-    
-    //                  </div>
-    //                </div>
-    //              </div>`;
-    // // categoryContainer.appendChild(categoryCardDiv);
-
-
-
 }
 loadCategories();
