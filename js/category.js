@@ -32,7 +32,25 @@ const loadCategoryId = (categoryId) =>{
     fetch(url)
     .then(res => res.json())
     .then(data => displayCategoryId(data.data))
+    
 }
+// const modalDetails = (modals) =>{
+//     const url = `https://openapi.programming-hero.com/api/news/0${modals}`
+//     console.log(url);
+//     fetch(url)
+//     .then(res => res.json())
+//     .then(data => modalNews(data));
+
+// }
+// const modalNews = newsDetails =>{
+//     console.log(newsDetails);
+//     // const modalTitle = document.getElementById('ModalLabel');
+//     // newsDetails.forEach(news =>{
+//     //     // modalTitle.innerText = news.
+
+//     // })
+// }
+// modalNews();
 
 const displayCategoryId = categoryCards =>{
     const countNews = document.getElementById('total-news');
@@ -45,6 +63,14 @@ const displayCategoryId = categoryCards =>{
     const categoryContainer = document.getElementById('category-card');
     categoryContainer.textContent = ``;
     categoryCards.forEach(card =>{
+        const modalTitle = document.getElementById('ModalLabel');
+        modalTitle.innerText = card.title;
+        const modalAuthor = document.getElementById('author-name');
+        modalAuthor.innerHTML = `
+        <img src="${card.image_url}" class="img-fluid rounded-4 my-4 mx-4" style="height: 200px; width: auto;">`
+        const modalDetails = document.getElementById('news-details');
+        modalDetails.innerText = card.details;
+        
         const categoryCardDiv = document.createElement('div');
         categoryCardDiv.classList.add('card');
         categoryCardDiv.innerHTML= `
