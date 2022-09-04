@@ -7,12 +7,11 @@ const loadCategories = async() => {
 const displayCategories = categories => {
     const categoryList = document.getElementById('category-list');
     categories.forEach(category => {
-        const categoryLi = document.createElement('li')
+        const categoryLi = document.createElement('button')
         categoryLi.classList.add('list-style');
-        categoryLi.classList.add('active');
         categoryLi.innerHTML=`
-        <li onclick = "loadCategoryId(${category.category_id}),toggleSpinner(true)">${category.category_name}</li>
-        `;
+        <button class="btn btn-outline-primary" onclick = "loadCategoryId(${category.category_id}),toggleSpinner(true)">${category.category_name}</button>`;
+
         categoryList.appendChild(categoryLi);
         
     });
@@ -34,23 +33,6 @@ const loadCategoryId = (categoryId) =>{
     .then(data => displayCategoryId(data.data))
     
 }
-// const modalDetails = (modals) =>{
-//     const url = `https://openapi.programming-hero.com/api/news/0${modals}`
-//     console.log(url);
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => modalNews(data));
-
-// }
-// const modalNews = newsDetails =>{
-//     console.log(newsDetails);
-//     // const modalTitle = document.getElementById('ModalLabel');
-//     // newsDetails.forEach(news =>{
-//     //     // modalTitle.innerText = news.
-
-//     // })
-// }
-// modalNews();
 
 const displayCategoryId = categoryCards =>{
     const countNews = document.getElementById('total-news');
