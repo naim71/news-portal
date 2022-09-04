@@ -17,8 +17,9 @@ body{
     padding: 5px;
     border-radius: 5px;
 }
-.list-style:hover{
+.list-style:hover {
     background-color: #EEEFFF;
     cursor: pointer;
     color: #5D5FEF;
 }
+

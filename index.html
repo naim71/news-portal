@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse p-2 fw-semibold">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link activ text-primary" aria-current="page" href="#">News</a>
+                      <a class="nav-link active text-primary" aria-current="page" href="#">News</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="blog.html">Blog</a>
@@ -38,19 +38,64 @@
 
             </ul>
         </section>
+        <section>
+            <div class="text-center d-none" id="loader">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+        </section>
          <!-- total number of news displayer -->
         <section class="display-card container mt-5 w-100 rounded-1 px-5 py-2 align-middle" id="total-news">
-            <p>Hi there!</p>
+        </section>
+        <!-- sort button -->
+        <section class="container mt-5 d-flex justify-content-between">
+            <div>
+                <p class="d-inline">Sort By View:</p>
+            <div class="dropdown ms-2 d-inline">
+                <button class="btn btn-secondary bg-white border border-0 text-muted
+                dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Default
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" id="">Highest to lowest</a></li>
+                <li><a class="dropdown-item" href="#">Lowest to Highest</a></li>
+                </ul>
+            </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary me-2">Today's Pick</button>
+                <button type="button" class="btn btn-outline-primary">Trending</button>
+            </div>
         </section>
         <!-- card -->
         <section id="category-card" class="container border border-0 mt-5">
 
         </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
     </main>
-    <!-- <footer>
-        <p class="container logo text-center position-absolute top-100 start-50 translate-middle">Copyright 2021 News Portal
+    <footer>
+        <p class="container logo text-center mt-5 mb-3">Copyright 2021 News Portal
         </p>
-    </footer> -->
+    </footer>
 
 
 

@@ -9,13 +9,22 @@ const displayCategories = categories => {
     categories.forEach(category => {
         const categoryLi = document.createElement('li')
         categoryLi.classList.add('list-style');
+        categoryLi.classList.add('active');
         categoryLi.innerHTML=`
-        <li onclick = "loadCategoryId(${category.category_id})">${category.category_name}</li>
+        <li onclick = "loadCategoryId(${category.category_id}),toggleSpinner(true)">${category.category_name}</li>
         `;
         categoryList.appendChild(categoryLi);
         
     });
-
+}
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('d-none');
+    }
+    else{
+        loaderSection.classList.add('d-none');
+    }
 }
 
 const loadCategoryId = (categoryId) =>{
@@ -26,13 +35,20 @@ const loadCategoryId = (categoryId) =>{
 }
 
 const displayCategoryId = categoryCards =>{
+    const countNews = document.getElementById('total-news');
+    countNews.textContent = ``;
+    const size = categoryCards.length;
+    const newCounter = document.createElement('p');
+    newCounter.innerHTML = `<p><strong>${size}</strong> items found on this category</p>`;
+    countNews.appendChild(newCounter);
+
     const categoryContainer = document.getElementById('category-card');
     categoryContainer.textContent = ``;
     categoryCards.forEach(card =>{
         const categoryCardDiv = document.createElement('div');
         categoryCardDiv.classList.add('card');
         categoryCardDiv.innerHTML= `
-        <div class="card mb-3 MT-4 container d-flex justify-content-between border border-0 rounded-3 shadow-lg" onclick ="displayDetails('${card._id}')">
+        <div class="card mb-3 MT-4 container d-flex justify-content-between border border-0 rounded-3 shadow-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <div class="d-flex">
           <div>
             <img src="${card.image_url}" class="img-fluid rounded-4 my-4 mx-4" style="height: 300px; width: 245px;">
@@ -40,7 +56,7 @@ const displayCategoryId = categoryCards =>{
           <div class= "w-75 mt-4">
             <div class="card-body p-4">
               <h5 class="card-title">${card.title}</h5>
-              <p class="card-text">${card.details}</p>
+              <p class="card-text">${card.details.slice(0,500)}</p>
             </div>
             <div class="d-flex justify-content-between align-items-center mt-4 p-4">
                 <div class="d-flex">
@@ -65,11 +81,8 @@ const displayCategoryId = categoryCards =>{
     </div>`;
     categoryContainer.appendChild(categoryCardDiv);
     });
+    toggleSpinner(false);
 }
 
-// const displayNewsCount = () => {
-//     const countContainer = document.getElementById('total-news');
-//     // countContainer.innerText= '${}'
-// } 
-// displayNewsCount();
+
 loadCategories();
