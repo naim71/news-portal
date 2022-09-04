@@ -1,4 +1,4 @@
-*,body{
+body{
    background-color: #f8f9fa;
    font-family: 'Roboto', sans-serif;
 }
@@ -9,5 +9,16 @@
     list-style: none;
 }
 .display-card{
-    background-color: black;
+    background-color: white;
+    color: black;
+    width: 65px;
+}
+.list-style{
+    padding: 5px;
+    border-radius: 5px;
+}
+.list-style:hover{
+    background-color: #EEEFFF;
+    cursor: pointer;
+    color: #5D5FEF;
 }
